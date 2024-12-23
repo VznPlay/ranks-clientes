@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganhadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+
+        #baixar{
+        margin-top: 25px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .highlight {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffd000;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .profile img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-info b {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .view-city {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .close {
+            background-color: #FF4D4D;
+            color: #fff;
+        }
+        .carousel-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .carousel {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 500px;
+            overflow: hidden;
+        }
+        .carousel img {
+            display: none;
+            width: 350px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 20px;
+            font-size: 25px;
+            color: #fbff00;
+            margin-left: 34%;
+            margin-right: 31%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .carousel-buttons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .carousel-buttons button {
+            padding: 8px 12px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel button.prev {
+            left: 10px;
+        }
+        .carousel button.next {
+            right: 10px;
+        }
+        footer {
+            margin-top: 50px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ccc;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        span {
+            font-weight: normal;
+            margin-left: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 19px;
+        }
+        .bb {
+            margin-top: 10px;
+        }
+        @media (max-width: 685px) {
+        .container {
+            width: 95%;
+            padding: 10px;
+        }
+        .highlight {
+            font-size: 1.3em;
+        }
+        .profile {
+            gap: 10px;
+        }
+        .profile img {
+            width: 120px;
+            height: 120px;
+        }
+        .profile-info b {
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 10px;
+        }
+
+        .view-city {
+            font-size: 12px;
+        }
+
+        .description {
+            margin-top: 15px;
+            font-size: 25px;
+            color: #fbff00;
+            margin:45px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        span {
+            font-size: 17px;
+        }
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Replicando a seção principal 10 vezes -->
+    <div id="baixar" class="container">
+        <div class="highlight">PRIMEIRO GANHADOR</div>
+        <div class="profile">
+            <img src="COROA PRETA.webp" alt="Foto do Cliente">
+            <div class="profile-info">
+                <b>NOME: <span> João Silva </span> </b>
+                <b>IDADE: <span> 35 anos </span> </b>
+                <b>SEXO: <span> Masculino </span> </b>
+                <b>INDICOU: <span> 5 </span> </b>
+                <b>CIDADE: <span> São Paulo </span> </b>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="view-city" onclick="openCarouselScreen()">VER CIDADE</button>
+            <a href=""><button class="view-city">SOLICITAR PREMIO</button></a>
+        </div>
+    </div>
+
+    <!-- Duplicar as 9 próximas -->
+    <div class="container">
+        <div class="highlight">SEGUNDO GANHADOR</div>
+        <div class="profile">
+            <img src="COROA PRETA.webp" alt="Foto do Cliente">
+            <div class="profile-info">
+                <b>NOME: <span> João Silva </span> </b>
+                <b>IDADE: <span> 35 anos </span> </b>
+                <b>SEXO: <span> Masculino </span> </b>
+                <b>INDICOU: <span> 5 </span> </b>
+                <b>CIDADE: <span> São Paulo </span> </b>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="view-city" onclick="openCarouselScreen()">VER CIDADE</button>
+            <a href=""><button class="view-city">SOLICITAR PREMIO</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="highlight">TERCEIRO GANHADOR</div>
+        <div class="profile">
+            <img src="COROA PRETA.webp" alt="Foto do Cliente">
+            <div class="profile-info">
+                <b>NOME: <span> João Silva </span> </b>
+                <b>IDADE: <span> 35 anos </span> </b>
+                <b>SEXO: <span> Masculino </span> </b>
+                <b>INDICOU: <span> 5 </span> </b>
+                <b>CIDADE: <span> São Paulo </span> </b>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="view-city" onclick="openCarouselScreen()">VER CIDADE</button>
+            <a href=""><button class="view-city">SOLICITAR PREMIO</button></a>
+            <a href="../index.html"><button class="view-city">VOLTAR</button></a>
+        </div>
+    </div>
+
+    <div class="carousel-screen" id="carouselScreen">
+        <div class="carousel">
+            <button class="prev" onclick="prevImage()">&#9664;</button>
+            <img src="46aAAYpZL1r4AQk0acYQ2F2wA.jpg" alt="Imagem 1" class="active">
+            <img src="announcement_ad_rev_share_9.png" alt="Imagem 2">
+            <img src="announcement_ad_rev_share_9.png" alt="Imagem 3">
+            <img src="46aAAYpZL1r4AQk0acYQ2F2wA.jpg" alt="Imagem 4">
+            <img src="announcement_ad_rev_share_9.png" alt="Imagem 5">
+            <button class="next" onclick="nextImage()">&#9654;</button>
+        </div>
+        <p class="description">Descrição da cidade: São Paulo é uma das maiores cidades do Brasil...</p>
+        <button class="close" onclick="closeCarouselScreen()">FECHAR</button>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function openCarouselScreen() {
+            document.getElementById('carouselScreen').style.display = 'flex';
+            startCarousel();
+        }
+
+        function closeCarouselScreen() {
+            document.getElementById('carouselScreen').style.display = 'none';
+            stopCarousel();
+        }
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        let carouselInterval;
+
+        function startCarousel() {
+            carouselInterval = setInterval(() => {
+                nextImage();
+            }, 3000);
+        }
+
+        function stopCarousel() {
+            clearInterval(carouselInterval);
+        }
+    </script>
+
+
+<footer>
+    <p>Todos os direitos reservados &copy; Vznplay</p>
+    <p> DUVIDAS? Entre em contato pelo nosso WhatsApp: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p> <br>
+    <p> Visite Nossa Loja É Confira Nossos Produtos: <a href="https://wa.me/SEUNUMERO">CLIQUE AQUI</a></p>
+</footer>
+
+</body>
+</html>
