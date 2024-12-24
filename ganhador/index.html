@@ -14,11 +14,9 @@
             align-items: center;
             background-color: #f5f5f5;
         }
-
         #baixar{
         margin-top: 25px;
         }
-
         .container {
             width: 90%;
             max-width: 850px;
@@ -72,6 +70,8 @@
             background-color: #007BFF;
             color: #fff;
         }
+
+        /*PARTE DO CARROSEL*/
         .close {
             background-color: #FF4D4D;
             color: #fff;
@@ -99,8 +99,8 @@
         }
         .carousel img {
             display: none;
-            width: 350px;
-            height: 200px;
+            width: 90%;
+            height:90%;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -109,8 +109,7 @@
         }
         .description {
             margin-top: 10px;
-            font-size: 20px;
-            font-size: 25px;
+            font-size: 17px;
             color: #fbff00;
             margin-left: 34%;
             margin-right: 31%;
@@ -152,6 +151,10 @@
         .carousel button.next {
             right: 10px;
         }
+
+
+    /*RESTO*/
+
         footer {
             margin-top: 50px;
             width: 100%;
@@ -202,148 +205,115 @@
         button {
             padding: 8px 10px;
         }
-
         .view-city {
             font-size: 12px;
         }
+        .carousel img {
+            width: 90%;
+            height:90%;
+        }
 
         .description {
-            margin-top: 15px;
-            font-size: 25px;
-            color: #fbff00;
-            margin:45px;
+            margin-top: 10px;
+            font-size: 16px;
+            margin-left: 13%;
+            margin-right: 10%;
             font-family: 'Courier New', Courier, monospace;
         }
+
 
         span {
             font-size: 17px;
         }
+        footer {
+    padding: 10px;
+    font-size: 12px;
+}
 
-        }
+}
 
-    </style>
+</style>
 </head>
 <body>
-    <!-- Replicando a seção principal 10 vezes -->
+
+    <!-- PRIMEIRO GANHADOR -->
     <div id="baixar" class="container">
         <div class="highlight">PRIMEIRO GANHADOR</div>
         <div class="profile">
             <img src="COROA PRETA.webp" alt="Foto do Cliente">
             <div class="profile-info">
-                <b>NOME: <span> João Silva </span> </b>
-                <b>IDADE: <span> 35 anos </span> </b>
-                <b>SEXO: <span> Masculino </span> </b>
-                <b>INDICOU: <span> 5 </span> </b>
-                <b>CIDADE: <span> São Paulo </span> </b>
+                <b>NOME: <span> Sortudo </span> </b>
+                <b>IDADE: <span> Zero </span> </b>
+                <b>SEXO: <span> Invalid </span> </b>
+                <b>INDICOU: <span> Nulo </span> </b>
+                <b>CIDADE: <span> Undefined </span> </b>
             </div>
         </div>
-        <div class="buttons">
-            <button class="view-city" onclick="openCarouselScreen()">VER CIDADE</button>
-            <a href=""><button class="view-city">SOLICITAR PREMIO</button></a>
         </div>
     </div>
 
-    <!-- Duplicar as 9 próximas -->
+    <!-- SEGUNDO GANHADOR -->
     <div class="container">
-        <div class="highlight">SEGUNDO GANHADOR</div>
-        <div class="profile">
-            <img src="COROA PRETA.webp" alt="Foto do Cliente">
-            <div class="profile-info">
-                <b>NOME: <span> João Silva </span> </b>
-                <b>IDADE: <span> 35 anos </span> </b>
-                <b>SEXO: <span> Masculino </span> </b>
-                <b>INDICOU: <span> 5 </span> </b>
-                <b>CIDADE: <span> São Paulo </span> </b>
-            </div>
-        </div>
-        <div class="buttons">
-            <button class="view-city" onclick="openCarouselScreen()">VER CIDADE</button>
-            <a href=""><button class="view-city">SOLICITAR PREMIO</button></a>
+    <div class="highlight">SEGUNDO GANHADOR</div>
+    <div class="profile">
+        <img src="COROA PRETA.webp" alt="Foto do Cliente">
+        <div class="profile-info">
+            <b>NOME: <span> Sortudo </span> </b>
+            <b>IDADE: <span> Zero </span> </b>
+            <b>SEXO: <span> Invalid </span> </b>
+            <b>INDICOU: <span> Nulo </span> </b>
+            <b>CIDADE: <span> Undefined </span> </b>
         </div>
     </div>
+    </div>
 
+    <!-- TERCEIRO GANHADOR -->
     <div class="container">
         <div class="highlight">TERCEIRO GANHADOR</div>
         <div class="profile">
             <img src="COROA PRETA.webp" alt="Foto do Cliente">
             <div class="profile-info">
-                <b>NOME: <span> João Silva </span> </b>
-                <b>IDADE: <span> 35 anos </span> </b>
-                <b>SEXO: <span> Masculino </span> </b>
-                <b>INDICOU: <span> 5 </span> </b>
-                <b>CIDADE: <span> São Paulo </span> </b>
+                <b>NOME: <span> Sortudo </span> </b>
+                <b>IDADE: <span> Zero </span> </b>
+                <b>SEXO: <span> Invalid </span> </b>
+                <b>INDICOU: <span> Nulo </span> </b>
+                <b>CIDADE: <span> Undefined </span> </b>
             </div>
         </div>
         <div class="buttons">
-            <button class="view-city" onclick="openCarouselScreen()">VER CIDADE</button>
-            <a href=""><button class="view-city">SOLICITAR PREMIO</button></a>
+            <button class="view-city" onclick="openCarouselScreen()">AGRADECIMENTOS</button>
             <a href="../index.html"><button class="view-city">VOLTAR</button></a>
         </div>
     </div>
 
+
+    <!-- CARROSSEL PRINCIPAL -->
     <div class="carousel-screen" id="carouselScreen">
         <div class="carousel">
             <button class="prev" onclick="prevImage()">&#9664;</button>
-            <img src="46aAAYpZL1r4AQk0acYQ2F2wA.jpg" alt="Imagem 1" class="active">
-            <img src="announcement_ad_rev_share_9.png" alt="Imagem 2">
-            <img src="announcement_ad_rev_share_9.png" alt="Imagem 3">
-            <img src="46aAAYpZL1r4AQk0acYQ2F2wA.jpg" alt="Imagem 4">
-            <img src="announcement_ad_rev_share_9.png" alt="Imagem 5">
+            <img src="primeiro/01.jpg" alt="Imagem 1" class="active">
+            <img src="primeiro/02.png" alt="Imagem 2">
+            <img src="primeiro/03.png" alt="Imagem 3">
+            <img src="primeiro/04.png" alt="Imagem 4">
+            <img src="primeiro/05.png" alt="Imagem 5">
+            <img src="primeiro/06.webp" alt="Imagem 6">
+            <img src="primeiro/07.jpg" alt="Imagem 7">
             <button class="next" onclick="nextImage()">&#9654;</button>
         </div>
-        <p class="description">Descrição da cidade: São Paulo é uma das maiores cidades do Brasil...</p>
+        <p class="description">Quero agradecer de coração a todos que participaram deste sorteio! Espero que o prêmio seja muito útil e traga alegria para quem ganhou. Vocês, meus clientes, são mais do que especiais, são a razão de tudo isso acontecer. Sou muito grato por ter vocês comigo, de verdade. Vocês são incríveis, e é sempre um prazer atender cada um! ❤️</p>
         <button class="close" onclick="closeCarouselScreen()">FECHAR</button>
     </div>
 
-    <script>
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll('.carousel img');
-
-        function openCarouselScreen() {
-            document.getElementById('carouselScreen').style.display = 'flex';
-            startCarousel();
-        }
-
-        function closeCarouselScreen() {
-            document.getElementById('carouselScreen').style.display = 'none';
-            stopCarousel();
-        }
-
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            showImage(currentImageIndex);
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            showImage(currentImageIndex);
-        }
-
-        let carouselInterval;
-
-        function startCarousel() {
-            carouselInterval = setInterval(() => {
-                nextImage();
-            }, 3000);
-        }
-
-        function stopCarousel() {
-            clearInterval(carouselInterval);
-        }
-    </script>
 
 
 <footer>
-    <p>Todos os direitos reservados &copy; Vznplay</p>
-    <p> DUVIDAS? Entre em contato pelo nosso WhatsApp: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p> <br>
-    <p> Visite Nossa Loja É Confira Nossos Produtos: <a href="https://wa.me/SEUNUMERO">CLIQUE AQUI</a></p>
+    <p>Todos Os Direitos Reservados &copy; VznPlay</p>
+    <p> Visite Nossa Loja É Confira Nossos Produtos: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p>
+    <p>EM caso De Duvida Entre Em Contato Pelo Nosso WhatsApp: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p>
+    
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,6 +126,10 @@ overflow-x: hidden; /* Remove a rolagem horizontal */
         .buttons-container .draw-btn:hover {
             background: linear-gradient(135deg, #5a6268, #494f54);
         }
+        .baixoo{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
         footer {
             margin-top: 50px;
             width: 100%;
@@ -146,37 +150,93 @@ overflow-x: hidden; /* Remove a rolagem horizontal */
             text-decoration: underline;
         }
         @media (max-width: 650px) {
-            .ranking-container {
+        .ranking-container {
             width: 97%;
         }
-            .others {
+        .others {
                 flex-wrap: wrap;
                 gap: 10px;
                 justify-content: center;
-            }
-            .others .rank {
+        }
+        .others .rank {
                 width: calc(100% / 3 - 20px);
                 max-width: 120px;
-            }
-
-            .top-three span {
+        }
+        .top-three span {
             font-size: 17px;
         }
-
         .top-three .rank img {
             width: 75px;
             height: 75px;
         }
 
         .buttons-container button {
-            margin: 10px 6px 6px 90px;
-            font-size: 15px;
+            padding: 10px 12px;
+            margin: 2px 2px 2px 2px;
+            font-size: 13px;
+        }
+
+        footer {
+    padding: 10px;
+    font-size: 12px;
         }
 
         }
+
+
+
+/* CRONOMETRO */
+.temp-real {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+}
+.panel {
+    text-align: center;
+    color: #fff;
+}
+.hora {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.hora span#ultima-atualizacao {
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-right: 5px;
+    color: #ecf0f1;
+}
+.link-premios a {
+    display: inline-block;
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+.link-premios a:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+        
     </style>
+
 </head>
 <body>
+    
     <h1>Ranking dos Clientes</h1>
     <div class="ranking-container">
         <div class="top-three">
@@ -220,14 +280,34 @@ overflow-x: hidden; /* Remove a rolagem horizontal */
             </div>
         </div>
     </div>
+
     <div class="buttons-container">
         <a href="premios/index.html"><button class="prizes-btn">TODOS OS PRÊMIOS</button></a>
         <a href="ganhador/index.html"><button class="draw-btn">VER GANHADOR</button></a>
-    </div> <br> <br>
+    </div> <br> 
+
+
+
+    <!-- ATUALIZAÇAO -->
+    <div class="temp-real">
+        <div class="panel">
+            <div class="hora" style="text-align: center;">
+                <span id="ultima-atualizacao">ATUALIZADO:</span>
+                <span id="hora-atual">00/00 - 00:00</span> <br> <!-- MUDAR A DATA AQUI-->
+            </div>
+            <div class="link-premios">
+                <a class="baixoo" href="bloqueados/index.html">Prêmios Bloqueados?</a> <br>
+                <a href="#" target="_blank">Loja VznPlay</a>
+            </div>
+        </div>
+    </div>
+
+
+
     <footer>
-        <p>Todos Os Direitos Eservados &copy; VznPlay</p>
-        <p> Visite Nossa Loja É Confira Nossos Produtos: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p>
-        <p>Entre Em Contato Pelo Nosso WhatsApp: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p>
+    <p>Todos Os Direitos Reservados &copy; VznPlay</p>
+    <p> Visite Nossa Loja É Confira Nossos Produtos: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p>
+    <p>EM caso De Duvida Entre Em Contato Pelo Nosso WhatsApp: <a href="https://wa.me/SEUNUMERO">Clique aqui</a></p>
     </footer>
 </body>
 </html>
