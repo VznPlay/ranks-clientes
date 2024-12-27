@@ -43,20 +43,41 @@
             border-radius: 8px;
             margin: 20px auto;
         }
-        .info {
-            flex: 1;
+        .audio-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
         }
-        .info h2 {
-            font-size: 1.4em;
-            margin: 0;
-            color: #34495e;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .info p {
-            margin: 10px 0 0;
+        .audio-button button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 1em;
-            color: #7f8c8d;
-            letter-spacing: 1px;
+        }
+        .audio-button button:hover {
+            background-color: #2980b9;
+        }
+        .audio-visualizer {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3498db 0%, #3498db 50%, #ddd 50%, #ddd 100%);
+            background-size: 200% 100%;
+            animation: visualizer 80s linear infinite;
+            opacity: 0;
+            margin-top: 5px;
+            border-radius: 3px;
+        }
+        @keyframes visualizer {
+            from {
+                background-position: 100% 0;
+            }
+            to {
+                background-position: 0 0;
+            }
         }
         .btn-voltar {
             display: block;
@@ -81,40 +102,41 @@
         }
 
         @media (max-width: 660px) {
-        h1 {
-            font-size: 2em;
+            h1 {
+                font-size: 2em;
+            }
+            .premio {
+                margin-bottom: 50px;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .premio img {
+                margin-left: 0%;
+                margin-bottom: 50px;
+                width: 330px;
+                height: 200px;
+                border-radius: 8px;
+                margin-right: 15px;
+            }
+            .info {
+                flex: 1;
+            }
+            .info h2 {
+                font-size: 1.2em;
+                margin: 0;
+                color: #34495e;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .info p {
+                margin: 10px 0 0;
+                font-size: .9em;
+                color: #7f8c8d;
+                letter-spacing: 1px;
+            }
+            .audio-visualizer{
+                margin-bottom: 20px;
+            }
         }
-        .premio {
-            margin-bottom: 50px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .premio img {
-            margin-left: 0%;
-            margin-bottom: 50px;
-            width: 330px;
-            height: 200px;
-        border-radius: 8px;
-            margin-right: 15px;
-        }
-        .info {
-            flex: 1;
-        }
-        .info h2 {
-            font-size: 1.2em;
-            margin: 0;
-            color: #34495e;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .info p {
-            margin: 10px 0 0;
-            font-size: .9em;
-            color: #7f8c8d;
-            letter-spacing: 1px;
-        }
-
-    }
-
     </style>
 </head>
 <body>
@@ -124,14 +146,17 @@
         <!-- Prêmio 1 -->
         <div class="premio">
             <img src="bloqeuio.jpg" alt="Prêmio 1">
-            <div class="info">
-                <h2>A ordem dos prêmios varia conforme as metas batidas, temos três prêmios disponíveis no momento, após bater a meta será desbloqueado um por um.
-                    Mas caso não bata a meta apenas a
-                    queles que estão disponíveis fará parte do sorteio!! { O Ganhador Pode Escolher O Prêmio Ou Valor }</h2> <br>
+            <div class="audio-button">
+                <button id="audioButton">Aperte Para Ouvir</button> <br> <br>
+            </div>
+            <div id="audioVisualizer" class="audio-visualizer"></div>
+            <div class="info"> 
+                <h2>A ordem dos prêmios varia conforme as metas atingidas. Temos três prêmios disponíveis no momento. Após bater a meta, será desbloqueado um por vez. Mas, caso a meta não seja atingida, apenas os prêmios disponíveis farão parte do sorteio.</h2> <br>
 
-                <p>Conforme o prêmio que será desbloqueado ele será redirecionado ao topo dependendo do valor, Primeiro sairá Os mais caros e depois os mais baratos, esses três que estão disponível no momento é o que já são voltados para o sorteio, mas caso desbloqueia algum prêmio mais caro como, por exemplo, a segunda televisão ela será automaticamente redirecionado ao topo ficando em segundo lugar da mesma forma o celular, Sendo assim os Pix ficarão por último junto com os outros dois aparelhos que também estão no sorteio, em caso de mais dúvidas entre em contato pelo WhatsApp que explicaremos tudo com mais detalhe.. <br> <br> <br>
+                <p>Conforme os prêmios forem sendo desbloqueados, eles serão redirecionados ao topo, dependendo do valor. Primeiramente, sairão os prêmios mais caros, seguidos pelos mais baratos. Os três prêmios disponíveis no momento já estão incluídos no sorteio. No entanto, caso algum prêmio de maior valor, como uma segunda televisão, seja desbloqueado, ele será automaticamente posicionado no topo, ocupando o segundo lugar. O mesmo ocorrerá com o celular. Dessa forma, os prêmios em Pix ficarão por último, juntamente com os outros dois aparelhos que já estão no sorteio. <br>
+                Se restarem dúvidas, entre em contato pelo WhatsApp, onde poderemos esclarecer todos os detalhes. <br> <br> <br>
                 
-                    <span>Obs:</span> Estávamos pensando em fazer um sorteio aleatório, porém não tínhamos orçamento suficiente para isso, nesse caso optamos por fazer esse tipo de premiação que premia quem indicar mais pessoas caso ultrapasse todas as metas, deixaremos a critério dos clientes escolher se querem sorteios aleatórios de Pix ou de outros aparelhos..</p>
+                    <span>Obs:</span> Inicialmente, consideramos realizar um sorteio aleatório, mas não dispúnhamos de orçamento suficiente. Por isso, optamos por este formato de premiação, que recompensa quem indicar mais pessoas. Caso todas as metas sejam atingidas, deixaremos a critério dos clientes decidir se preferem sorteios aleatórios de Pix ou de outros aparelhos.</p>
 
                 </p>
             </div>
@@ -140,5 +165,34 @@
         <!-- Botão Voltar -->
         <a href="../index.html" class="btn-voltar">VOLTAR</a>
     </div>
+
+    <audio id="audioPlayer">
+        <source  src="voz masculina.mp3" type="audio/mpeg" >
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script>
+        const audioButton = document.getElementById('audioButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioVisualizer = document.getElementById('audioVisualizer');
+
+        audioButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                audioButton.textContent = 'Pausar';
+                audioVisualizer.style.opacity = 1;
+            } else {
+                audioPlayer.pause();
+                audioButton.textContent = 'Ouvir';
+                audioVisualizer.style.opacity = 0;
+            }
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            audioButton.textContent = 'Ouvir';
+            audioVisualizer.style.opacity = 0;
+        });
+    </script>
 </body>
 </html>
+
